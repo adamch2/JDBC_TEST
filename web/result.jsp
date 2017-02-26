@@ -10,7 +10,8 @@
 <%@ page import="org.apache.poi.ss.formula.functions.Na" %>
 <%@ page import="Model.NamesDAO" %>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Tables</title>
 </head>
@@ -25,8 +26,9 @@
     ResultSet rs = nd.getStatement().executeQuery("SELECT name,surname,age FROM test.test_names;");
 %>
 
+<div class="container">
 
-<table>
+<table class="table table-striped">
     <%while (rs.next()){%>
     <tr>
         <td><% out.println(rs.getString("Name")); %></td>
@@ -53,6 +55,7 @@ nd.closeConnection();
     <button type="submit" onclick="button.value=2">Export to CSV</button>
 </form>
 
+</div>
 
 <a href="/JDBC_test_war_exploded/" >Send Me To Main Page!</a>
 

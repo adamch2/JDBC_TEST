@@ -10,7 +10,11 @@ import java.io.*;
  * Created by adam on 16/02/17.
  */
 public class NamesDAO {
-    private final static String DBURL = "jdbc:mysql://localhost:3306";
+    private final static String DBURL = "jdbc:mysql://localhost:3306"
+           // + "?verifyServerCertificate=false" //  bypassing the certificate validation
+           // + "&useSSL=true"
+           // + "&requireSSL=true"
+           ;
     private final static String DBUSER = "root";
     private final static String DBPASS = "zaq12wsx";
     private final static String DBDRIVER = "com.mysql.jdbc.Driver";
