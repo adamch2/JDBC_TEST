@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    
+    <servlet>
+        <servlet-name>dNC</servlet-name>
+        <servlet-class>Controller.NamesController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dNC</servlet-name>
+        <url-pattern>doNamesController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>dRC</servlet-name>
+        <servlet-class>Controller.ResultController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dRC</servlet-name>
+        <url-pattern>doResultController</url-pattern>
+    </servlet-mapping>
+    
+</web-app>
