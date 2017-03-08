@@ -64,11 +64,11 @@ public class NamesDAO {
         }
     }
 
-    public void delete(int idTestNames){
-        String query1 = "DELETE FROM test.test_names WHERE idtest_names="+(idTestNames+1)+";";
+    public void delete(String database, int idTable){
+        String query1 = "DELETE FROM test."+database+" WHERE id"+database+"="+(idTable+1)+";";
         String query2 = "SET @count:=0";
-        String query3 = "UPDATE test.test_names SET idtest_names = @count:= @count + 1;";
-        String query4 = "ALTER TABLE test.test_names AUTO_INCREMENT=1;";
+        String query3 = "UPDATE test."+database+" SET id"+database+" = @count:= @count + 1;";
+        String query4 = "ALTER TABLE test."+database+" AUTO_INCREMENT=1;";
 
         try {
             statement.executeUpdate(query1);
@@ -78,6 +78,17 @@ public class NamesDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public void selectName(String select_name , String select_age){
+        String query = "INSERT INTO test.select_names VALUES('0','"+select_name+"','"+select_age+"');";
+
+        try {
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
 
